@@ -4,6 +4,8 @@
     import Inputs from "./components/Inputs.svelte";
     import Chart from "./components/Chart.svelte";
 
+    import { numberWithCommas } from "./util/util";
+
     import {
         price,
         balance,
@@ -48,7 +50,7 @@
                 <tbody>
                     <tr>
                         <th>Value</th>
-                        <td>${$currentValue ? $currentValue.toFixed(2) : 0}</td>
+                        <td>${$currentValue ? numberWithCommas($currentValue.toFixed(2)) : 0}</td>
                     </tr>
                     <tr>
                         <th>APY</th>
@@ -70,7 +72,7 @@
                     </tr>
                     <tr>
                         <th>Value</th>
-                        <td>${$dailyReward ? $dailyReward.toFixed(2) : 0}</td>
+                        <td>${$dailyReward ? numberWithCommas($dailyReward.toFixed(2)) : 0}</td>
                     </tr>
                 </tbody>
             </table>

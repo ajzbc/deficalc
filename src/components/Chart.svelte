@@ -1,6 +1,7 @@
 <script>
     import * as Pancake from "@sveltejs/pancake";
     import { ranges, options } from "../util/options";
+    import { numberWithCommas } from "../util/util";
 
     import { price, balance, currentValue, dailyYield, dailyStake, dailyReward } from "../store";
 
@@ -40,12 +41,6 @@
         let current = new Date();
         let future = new Date(current.getTime() + day * 24 * 60 * 60 * 1000);
         return `${future.toLocaleDateString(undefined, { month: "numeric", day: "numeric" })}`;
-    }
-
-    function numberWithCommas(x) {
-        var parts = x.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return parts.join(".");
     }
 
     function formatNumber(n) {

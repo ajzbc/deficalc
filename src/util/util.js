@@ -1,4 +1,3 @@
-/** Dispatch event on click outside of node */
 export function clickOutside(node) {
     const handleClick = (event) => {
         if (node && !node.contains(event.target) && !event.defaultPrevented) {
@@ -17,4 +16,10 @@ export function clickOutside(node) {
 
 export function focus(element) {
     element.focus();
+}
+
+export function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
 }

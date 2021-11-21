@@ -1,7 +1,7 @@
 <script>
     import { items, term, filtered } from "../store";
     import { onMount } from "svelte";
-    import { clickOutside, focus } from "../util/util";
+    import { clickOutside, focus, numberWithCommas } from "../util/util";
 
     import { price } from "../store";
 
@@ -63,7 +63,7 @@
                     />
                 </svg>
             {:else if selection && !open}
-                <span class="text-lg">${selection.price}</span>
+                <span class="text-lg">${numberWithCommas(selection.price)}</span>
             {:else if !open}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
