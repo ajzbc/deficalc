@@ -21,7 +21,7 @@
 <p>Rebases / Day</p>
 <input type="text" bind:value={input_rebasesDay} placeholder="0" />
 
-<p>Staked Balance</p>
+<p>Staked Balance (Tokens)</p>
 <input type="text" bind:value={input_balance} placeholder="0" />
 
 <style global lang="postcss">

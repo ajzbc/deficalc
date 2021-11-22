@@ -50,8 +50,6 @@
         if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1) + "B";
         if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
     }
-
-    $: console.log("chart", collection);
 </script>
 
 <div class="flex justify-between gap-3 flex-col sm:flex-row items-start">
@@ -93,7 +91,7 @@
             <Pancake.Point x={closest.x} y={closest[option]}>
                 <span class="annotation-point" />
                 <div
-                    class="annotation"
+                    class="annotation {closest.x < Math.floor(range / 2) ? 'annotation-left' : 'annotation-right'}"
                     style="transform: translate(-{100 * ((closest.x - +Infinity) / (-Infinity - +Infinity))}%,0)"
                 >
                     <span>{dateString(closest.x)}</span>
@@ -174,6 +172,7 @@
         left: -2em;
         bottom: -32px;
         text-align: center;
+        @apply transform rotate-45 sm:rotate-0;
     }
 
     path.data {
@@ -194,6 +193,14 @@
 
         background-color: #fff;
         box-shadow: rgba(88, 102, 126, 0.08) 0px 1px 1px, rgba(88, 102, 126, 0.1) 0px 8px 16px;
+    }
+
+    .annotation-left {
+        left: 0;
+    }
+
+    .annotation-right {
+        right: 0;
     }
 
     .annotation-point {

@@ -40,11 +40,11 @@
     </div>
 
     <div class="flex gap-4 flex-col md:flex-row mb-10">
-        <div class="inputs flex flex-col bg-white px-5 py-4 rounded-lg">
+        <div class="inputs flex flex-col px-5 py-4 rounded-lg w-full">
             <Inputs />
         </div>
 
-        <div class="calc flex-grow py-4 px-5">
+        <div class="calc py-4 px-5 w-full">
             <p>Current</p>
             <table>
                 <tbody>
@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <th>APY</th>
-                        <td>{$APY ? $APY.toFixed(2) : 0}%</td>
+                        <td>{$APY ? numberWithCommas($APY.toFixed(2)) : 0}%</td>
                     </tr>
                 </tbody>
             </table>
@@ -64,11 +64,11 @@
                 <tbody>
                     <tr>
                         <th>ROI</th>
-                        <td>{$dailyYield ? $dailyYield.toFixed(4) : 0}%</td>
+                        <td>{$dailyYield ? numberWithCommas($dailyYield.toFixed(4)) : 0}%</td>
                     </tr>
                     <tr>
                         <th>Rebase</th>
-                        <td>{$dailyStake ? $dailyStake.toFixed(4) : 0}</td>
+                        <td>{$dailyStake ? numberWithCommas($dailyStake.toFixed(4)) : 0}</td>
                     </tr>
                     <tr>
                         <th>Value</th>

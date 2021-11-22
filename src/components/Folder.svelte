@@ -32,7 +32,7 @@
     </button>
 
     {#if open}
-        <div class="px-5" in:fly={{ y: -50, duration: 100 }} out:fly={{ y: -50, duration: 100 }}>
+        <div class="md:px-5" in:fly={{ y: -50, duration: 100 }} out:fly={{ y: -50, duration: 100 }}>
             <slot name="component" />
         </div>
     {/if}
